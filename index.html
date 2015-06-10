@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRM Server</title>
+
+    <script type="text/javascript" src="main.js"></script>
+
+  </head>
+
+  <body>
+
+    <h3>Step#1 Input server port number</h3>
+    <form id="myForm">Input port number: <input type="text" id="myPort" value="1337"></form>
+    <button id="configureServerPort" onclick="button1()">Configure server port</button>
+
+    <h3>Step#2 Create file. Ex: /home/yyf/data/myFileName.txt </h3>
+    <form id="myForm2">Input absolute path and name your file: <input type="text" id="myPath" value="/home/yyf/data/myData.txt"></form>    
+    <button id="createFolder" onclick="button2()">Create file</button>
+
+    <h3>Step#3 Start server</h3>
+    <button id="startServer" onclick="button3()">Start server</button>
+    
+    <h3>Step#4 Stop server</h3>
+    <button id="stop" onclick="button4()">Stop server</button>
+
+    <h3>Step#5 Save file</h3>
+    <button id="saveFile" onclick="button5()">Save file</button>
+
+    <h3>Step#6 Quit</h3>
+    <button id="quit" onclick="button6()">Quit</button>
+
+    <h3>Console</h3>        
+    <p id="console"></p>
+
+    <h3>Number of clients</h3>    
+    <p id="numberOfClients"></p>
+
+    <h3>Time</h3>    
+    <p id="currentTime"></p>
+        
+  </body>
+</html>

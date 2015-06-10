@@ -1,0 +1,10 @@
+{
+  "name": "CRMserver",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "resizable": false,
+    "width": 1024,
+    "height": 768
+    }
+}
