@@ -5,14 +5,12 @@ var app = express()
   , io = require('socket.io').listen(server)  
   , fs = require('fs');  
 
-var inputPort = 1337; // to avoid js error at init              
+var inputPort = 1337; 
 var folder_path = "/data" ;
 var consoleUpdateInMilliSeconds   = 1000;
 var fileWriteUpdateInMilliSeconds = 10000;
 var myVar1=setInterval(function(){myTimer()},consoleUpdateInMilliSeconds); // show current time
 var myVar4=setInterval(function(){myClient()},consoleUpdateInMilliSeconds); // update console
-// var myVar2=setInterval(function(){updateConsoleWithIncomingDataAndWriteToFile()},fileWriteUpdateInMilliSeconds); // write file and update console
-// var numberOfConnertion=0;
 var data = 0; // problem 
 var bTimer = false;
 var numberOfConnertion=0;
@@ -48,38 +46,9 @@ function button3()
 
 function button4()
 {        
-    // io.sockets.on('disconnection', function (socket) {  
-    //   socket.on('disconnect', function () {
-    //       // io.sockets.emit('user disconnected');
-           // server.close();    
-           // socket.disconnect();
-    //       //socket.destroy();
-    //     });
-    // };
-    //io.server.close();
-
-    // var socketlist = [];
-    // io.sockets.on('connection', function(socket) {
-    //     socketlist.push(socket);
-    //     socket.emit('socket_is_connected','You are connected!');
-    //     socket.on('close', function () {
-    //       console.log('socket closed');
-    //       socketlist.splice(socketlist.indexOf(socket), 1);
-    //     });
-    // });
-
-    // socketlist.forEach(function(socket) {
-    //   socket.destroy();
-    // });
-    // io.socket.disconnect();
-    // io.server.close();    
-      //io.sockets.on('connection', function (socket) {
-        //sockets.destroy();
-        //io.sockets.disconnect(true);
-        server.close();
-        //app.close();
-     // });
-    // debug
+    
+    server.close();
+    
     document.getElementById("console").innerHTML= "Server stopped successfully!";    
 
     bTimer = false;  
@@ -116,22 +85,6 @@ function myTimer()
     var t=d.toLocaleTimeString();
     document.getElementById("currentTime").innerHTML= t;
 }    
-
-// function updateConsoleWithIncomingDataAndWriteToFile(){      
-//   io.sockets.on('connection', function (socket) {
-//       socket.on('sliderValue', function (data) {    
-//         if (bTimer) {
-//         //
-//         document.getElementById("console").innerHTML= "Incoming data: " + String(data[0]) + " - " + String(data[1]) + " - " + String(data[2]) + " - " + String(data[3]) + " - " + String(data[4]) + " - " + String(data[5]) + " - " + String(data[6]);            
-//         //
-        
-//         //console.log("/user " + " - " + String(data[0]) + " - " + String(data[1]) + " - " + String(data[2]) + " - " + String(data[3]) + " - " + String(data[4]) + " - " + String(data[5]) + " - " + String(data[6]));        
-
-//         stream.write(String(data[0]) + " , " + String(data[1]) + " , " + String(data[2]) + " , " + String(data[3]) + " , " + String(data[4]) + " , " + String(data[5]) + " - " + String(data[6]) + "\n");    
-//         };
-//       });  
-//   });
-// }
 
 io.sockets.on('connection', function (socket) {
   numberOfConnertion++;
